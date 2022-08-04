@@ -47,7 +47,7 @@ const cart =()=>{
               if(password.value==user.passWord){
                 alertt.innerText="Login successful"
                 localStorage.userLoggedIn=true
-                window.location.href="index.html"
+                window.location.href="cart.html"
               }
               else{
                 alertt.innerText="Unsuccessful login"
@@ -63,6 +63,7 @@ const cart =()=>{
         alertt.innerText="No account found"
          }
     }
+
 
   }
   let register = () => {
@@ -92,4 +93,5 @@ const cart =()=>{
       alert(`Complete the information above`)
     }
   }
+
 
