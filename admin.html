@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<body class="bg-dark">
+    <div class="bg-light w-50 p-4 mx-auto d-flex justify-content-center flex-column">
+
+
+        
+        <form  class=" d-flex flex-column mb-4 mt-1" action="fisrtName" enctype="multipart/form-data">
+            <label class="form-label" for="First Name">
+                Upload a Picture<br>
+                <input class="inp form-control" type="file" placeholder="" id="picture" onchange="">
+            </label>
+        
+        
+            <label class="form-label" for="Last Name">
+                Product Name<br>
+                <input class="inp form-control w-100" type="text" placeholder="Product Name" id="pName">
+            </label>
+        
+        
+            <label class="form-label" for="Email">
+                Price<br>
+                <input class="inp form-control" type="text" placeholder="Price" id="price">
+            </label>
+        </form>
+        <button class="btn btn-primary" onclick="addtoCart()">Submit</button>
+    </div>
+</body>
+<script>
+    addtoCart=()=>{
+        console.log(picture.files[0])
+        const everything=picture.files[0]
+        let reader=new FileReader()
+        reader.readAsDataURL(everything)
+        reader.onload=()=>{
+            const fileName=picture.files[0].name
+            newItem = {
+                picture:fileName,
+                Name: pName.value,
+                price: price.value
+            }
+            if (localStorage.goods) {
+                allGoods = JSON.parse(localStorage.goods)
+                allGoods.push(newItem)
+                console.log(allGoods)
+                let newallGoods=JSON.stringify(allGoods)
+                localStorage.goods=newallGoods
+            } else {
+                let allGoods=[]
+                allGoods.push(newItem)
+                console.log(allGoods)
+                let newallGoods=JSON.stringify(allGoods)
+                localStorage.goods=newallGoods
+            }
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="signup.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body class="" onload="getUserInfo()">
+
+    <div id="backgroudc" class="h-1 d-flex justify-content-center align-items-center pt-4" >
+    <section class="secOne  d-flex">
+        <p class="fs-5">Login to account</p>
+        <div id="alertt" class="bg-light px-4"></div>
+        <form class=" mt-4" action="Email">
+            <label class="form-label" for="Email">
+                Email Address<br>
+                <input class="inp form-control" type="email" placeholder="Email Address" id="email">
+            </label>
+        </form>
+        <form class=" mt-4" action="password">
+            <label for="password form-label">
+                Password <br>
+                <input class="inp form-control" type="password" placeholder="Password" id="password">
+            </label>
+        </form>
+        <div align="center">
+            <button class=" btn btn-primary mt-4 but btn " type="submit" onclick="login()">Login</button>
+        </div>
+    </section>
+   </div>
+
+    <script src="ecommerce.js"></script>
+</body>
+
+</html>

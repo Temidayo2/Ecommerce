@@ -1,0 +1,8 @@
+#shoe1{
+    width: 150px;
+}
+#shoe1:hover{
+    cursor: pointer;
+
+transform: scale(1.36);
+}
