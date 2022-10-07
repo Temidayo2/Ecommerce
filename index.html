@@ -3,19 +3,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FOOTY</title>
+    <title>COMFTY</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </head>
 <body class="bg-dark" onload="fetchGoods()">
     
-     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+     <nav id="navbar" class=" fixed-top navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <a class="navbar-brand" href="#">FOOTY</a>
+          <a class="navbar-brand" href="#">COMFTY</a>
           <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
               <li class="nav-item">
@@ -27,17 +27,17 @@
               <li class="nav-item">
             </li>
         </ul>
-        <form class="d-flex"> 
+        <div class="d-flex"> 
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <a class="nav-link active" aria-current="page" href="./cart.html">
               <button class="btn btn-outline-light" type="submit"><img  id="cart" src="cart.png" alt=""></button></a>
               <button class="btn btn-primary" onclick="logout()">Logout</button>
-            </form>
+            </div>
           </div>
 
         </div>
-      </nav> <br>
-    <div class="container" >
+      </nav> <br> <br><br> <br>
+    <!-- <div class="container" >
         <div class="row d-flex justify-content-around ">
             <div class="col-xs-12 col-sm-4 col-md-3 col-3-justify-content-around">
                 <div class="card ">
@@ -183,13 +183,69 @@
         </div>
 
 
+       
+    </div>  <br>
+    <div class="container">
+        <div class="row d-flex justify-content-around ">
+            <div class="col-xs-12 col-sm-4 col-md-3 col-3-justify-content-around">
+                <div class="card ">
+                    <div class="card-body">
+                        <img id="cloth1" src="c11.png" alt="">
+                        <p>Gucci</p>
+                        <p>Sweatshirt</p>
+                        <span>$100</span>
+
+                    </div>
+                        <button class="btn btn-primary"onclick="cart()">Add to cart</button>
+
+
+                </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-3 col-3-justify-content-around">
+                <div class="card">
+                    <div class="card-body">
+                        <img id="cloth1" src="c22.png" alt="">
+                        <p>Gucci</p>
+                        <p>Sweatshirt</p>
+                        <span>$100</span>
+
+                    </div>
+                       <button class="btn btn-primary"onclick="cart()">Add to cart</button>
+
+
+                </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-3 col-3-justify-content-around">
+                <div class="card">
+                    <div class="card-body" id="fetchCard">
+                        <img id="cloth1" src="c33.png" alt="">
+                        <p>Gucci</p>
+                        <p>Sweatshirt</p>
+                        <span>$100</span>
+
+                    </div>
+                 
+                        <button class="btn btn-primary"onclick="cart()">Add to cart</button>
+                        <div id="hi"></div>
+
+                 
+
+                </div>
+            </div>
+
+        </div>
+ -->
+
         <div class='row d-flex justify-content-around mb-2' id="all">
         </div>
-    </div>
+    </div> 
 
 
     <script src="ecommerce.js"></script>
    
+    <div class='container'><div class='row d-flex justify-content-around'>
 
    <script>
     fetchGoods=()=>{
@@ -197,7 +253,7 @@
         for (let i = 0; i < allGoods.length; i++) {
             
             console.log(allGoods[i])
-            all.innerHTML+="<div class='col-xs-12 mb-2 col-sm-4 col-md-3 col-3-justify-content-around'><div class='card'><div class='card-body'><img id='shoe1' src='"+allGoods[i].picture+"' alt=''><p>"+allGoods[i].Name+"</p><span>$"+allGoods[i].price+"</span></div><button class='btn btn-primary' onclick='cart()'>Add to cart</button></div> "
+            all.innerHTML+="  <div class='col-xs-12 mb-2 col-sm-4 col-md-3 col-3-justify-content-around'><div class='card'><div class='card-body'><img id='shoe1' src='"+allGoods[i].picture+"' alt=''><p>"+allGoods[i].Name+"</p><span>$"+allGoods[i].price+"</span></div><button class='btn btn-primary' onclick='cart("+i+")'>Add to cart</button></div>"
         }
     }
    </script>

@@ -7,13 +7,35 @@ const logout=()=>{
     alert("No user is logged in")
   }
 }
-const cart =()=>{
+const cart =(i)=>{
     if(localStorage.userLoggedIn){
+
+      const rItem= allGoods[i]
+      cartDetails={
+        picture:rItem.picture,
+        nameofGood:rItem.Name,
+        priceofGood:rItem.price,
+        email:localStorage.email
+      }
+      console.log(cartDetails)
+      
+      if(localStorage.carts){
+        cartss=JSON.parse(localStorage.carts);
+        cartss.push(cartDetails)
+        localStorage.setItem('carts',JSON.stringify(cartss))
+      }
+      else{
+        const cia=[]
+        cia.push(cartDetails)
+        localStorage.setItem('carts',JSON.stringify(cia))
+      }
+      // window.location.href = "cart.html"
         console.log("A user is logged in")
     }
     else{
       window.location.href = "signup.html";
     }
+
  }
     
  let user = [
@@ -47,6 +69,7 @@ const cart =()=>{
               if(password.value==user.passWord){
                 alertt.innerText="Login successful"
                 localStorage.userLoggedIn=true
+                localStorage.email=user.eMail
                 window.location.href="cart.html"
               }
               else{
@@ -63,7 +86,7 @@ const cart =()=>{
         alertt.innerText="No account found"
          }
     }
-
+    
 
   }
   let register = () => {
